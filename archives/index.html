@@ -63,9 +63,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-markdown使用技巧" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/01/12/markdown/" class="article-date">
+    <a href="/2015/01/12/markdown使用技巧/" class="article-date">
   <time datetime="2015-01-12T09:39:51.000Z" itemprop="datePublished">Jan 12 2015</time>
 </a>
     
@@ -77,7 +77,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/12/markdown/">markdown</a>
+      <a class="article-title" href="/2015/01/12/markdown使用技巧/">markdown</a>
     </h1>
   
 
@@ -85,11 +85,177 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="1-标题示例：">1.标题示例：</h3>
+<h3 id="我是三级标题">我是三级标题</h3>
+<h2 id="我是二级标题">我是二级标题</h2>
+<h1 id="我是一级标题">我是一级标题</h1>
+<h3 id="2-字体样式示例：">2.字体样式示例：</h3>
+<p><strong>我是加粗的内容</strong></p>
+<p><em>我是倾斜的内容</em></p>
+<p><strong><em>我是加粗和倾斜</em></strong></p>
+<p>我是<br>-<br>字体后面加上换行加减号的效果</p>
+<h3 id="3-分割线：">3.分割线：</h3>
+<p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h3 id="4-区块：">4.区块：</h3>
+<p>单竖线区块：</p>
+<blockquote>
+<p>我是单竖线区块</p>
+<p>这是我里面内容，适合写一些补充类的说明</p>
+</blockquote>
+<p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 &gt; ：</p>
+<blockquote>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>id sem consectetuer libero luctus adipiscing.</p>
+</blockquote>
+<p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &gt; ：</p>
+<blockquote>
+<p>This is the first level of quoting.</p>
+<blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<p>Back to the first level.</p>
+</blockquote>
+<p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
+<blockquote>
+<h2 id="这是一个标题。">这是一个标题。</h2>
+<ol>
+<li>这是第一行列表项。</li>
+<li>这是第二行列表项。</li>
+</ol>
+<p>给出一些例子代码：</p>
+<pre><code><span class="keyword">return</span> shell_<span class="keyword">exec</span>(<span class="string">"echo <span class="variable">$input</span> | <span class="variable">$markdown_script</span>"</span>);
+</code></pre></blockquote>
+<p>注意：上面这个边框区块是用四个空格制造的，不是用tab</p>
+<p>边框区块</p>
+<pre><code>用<span class="keyword">tab</span>键制造：
+</code></pre><h3 id="5-无序列表">5.无序列表</h3>
+<ul>
+<li>我是无序列表</li>
+<li>我是实心圆点</li>
+<li>注意书写第一项的时候，“星号”后面有一个空格</li>
+</ul>
+<ul>
+<li>这个列表的特点是两个中间会有一个大的分割</li>
+<li>这是用加号实现的</li>
+</ul>
+<ul>
+<li>这里是用减号实现的第三种无序列表</li>
+<li>三个之间没什么特别的区分</li>
+</ul>
+<h3 id="6-有序列表">6.有序列表</h3>
+<ol>
+<li>朱</li>
+<li>占</li>
+<li><p>阳</p>
+</li>
+<li><p>朱</p>
+</li>
+<li>占</li>
+<li>阳</li>
+</ol>
+<h3 id="7-其他写法">7.其他写法</h3>
+<p>&lt;案例一：&gt;</p>
+<ul>
+<li><p>我是我修改了android搜狗输入法的默认皮肤theme.sga，现在想重新打包成apk。<br>首先我从google code上下载了apktool并已用命令验证安装成功,java jre及jdk以及java环境变量都已经配置好了</p>
+</li>
+<li><p>我是我修改了android搜狗输入法的默认皮肤theme.sga，现在想重新打包成apk。<br>首先我从google code上下载了apktool并已用命令验证安装成功,java jre及jdk以及java环境变量都已经配置好了</p>
+</li>
+</ul>
+<p>注意：中间加了一个enter，就会分段，可以用其他列表的符号再实验一下，加或者减</p>
+<p>&lt;案例二：&gt;</p>
+<p>当然，项目列表很可能会不小心产生，像是下面这样的写法：<br>仔细观察下面的写法，你会发现他会把986省略，认为是一点。</p>
+<ol>
+<li>What a great season.<br>换句话说，也就是在行首出现数字-句点-空白，要避免这样的状况，你可以在句点前面加上反斜杠。</li>
+<li>what  a mazing!</li>
+</ol>
+<p>1986. What a great season.</p>
+<h3 id="8-链接">8.链接</h3>
+<p>链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。</p>
+<p>下面是一个参考式链接的范例：</p>
+<p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="external">Google</a> than from<br><a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="external">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="external">MSN</a>.</p>
+<p>如果改成用链接名称的方式写：</p>
+<p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="external">Google</a> than from<br><a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="external">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="external">MSN</a>.</p>
+<h3 id="9-强调">9.强调</h3>
+<p>Markdown 使用星号（<em>）和底线（_）作为标记强调字词的符号，被 </em> 或 <em> 包围的字词会被转成用 html的em标签包围效果，用两个 * 或 </em> 包起来的话，则会被转成 html的strong标签包裹效果例如：</p>
+<p><em>single asterisks</em></p>
+<p><em>single underscores</em></p>
+<p><strong>double asterisks</strong></p>
+<p><strong>double underscores</strong></p>
+<p>同样我可以使用html标签：</p>
+<p><em>我是强调字词</em></p>
+<p><strong>我是变粗的字词</strong></p>
+<p>但是这两个标签如果没有闭合会对下面的所有文字产生效果：<br>例如：</p>
+<p><em>我倾斜了</em></p>
+<p><strong>我加粗了，但是仔细看，我也倾斜</strong></p>
+<p></p>
+<p>用上面这个闭合的标签中断对后面得到影响!</p>
+<p>强调也可以直接插在文字中间：</p>
+<p>我朋友<em>习近平</em>请我吃饭！</p>
+<h3 id="10-代码">10.代码</h3>
+<p>如果要标记一小段行内代码，你可以用反引号把它包起来（`），例如：</p>
+<p>Use the <code>printf()</code> function.</p>
+<p>如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：</p>
+<p><code>There is a literal backtick (`) here.</code></p>
+<p>相当于这个标签：</p>
+<p><code>System.out.print()</code></p>
+<h3 id="11-图片">11.图片</h3>
+<p>详细叙述如下：</p>
+<ol>
+<li>一个惊叹号 !</li>
+<li>接着一个方括号，里面放上图片的替代文字</li>
+<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 文字。</li>
+</ol>
+<h3 id="12反斜杠">12反斜杠</h3>
+<pre>
+Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，
+例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 em 标签），你可以在星号的前面加上反斜杠：
+
+\*literal asterisks\*
+Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：
+
+
+\   反斜线
+`   反引号
+*   星号
+_   底线
+{}  花括号
+[]  方括号
+()  括弧
+#   井字号
++   加号
+-   减号
+.   英文句点
+!   惊叹号
+
+</pre>
+
+<h3 id="13表格">13表格</h3>
+<h2 id="快捷键">快捷键</h2>
+<p>markdown也是可以使用快捷键的</p>
+<p><strong>ctrl+u</strong> 前面加减号，无序列表</p>
+<p><strong>ctrl+b</strong> 将两个星，变粗</p>
+<p><strong>ctrl+I</strong> 倾斜</p>
+<h3 id="14代码：">14代码：</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ihubo = {</div><div class="line">  nickName  : <span class="string">"草依山"</span>,</div><div class="line">  site : <span class="string">"http://jser.me"</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p><em>java代码</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.huayjx.bfda.ui.cxfw;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CxfwFragment</span> <span class="keyword">extends</span> <span class="title">BaseFragment</span> </span>{</div><div class="line">	<span class="annotation">@InjectView</span>(R.id.listView) ListView listView;</div><div class="line"></div><div class="line">	<span class="annotation">@Override</span></div><div class="line">	<span class="keyword">public</span> View <span class="title">onCreateView</span>(LayoutInflater inflater, ViewGroup container,</div><div class="line">			Bundle savedInstanceState) {</div><div class="line">		View view = inflater.inflate(R.layout.layout_listview, container, <span class="keyword">false</span>);</div><div class="line">		ButterKnife.inject(<span class="keyword">this</span>, view);</div><div class="line">		<span class="keyword">return</span> view;</div><div class="line">	}	</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>前面加一个tab，或者空四个空格也能生成代码块，对比一下两种方式的效果</p>
+<pre><code><span class="keyword">var</span> ihubo={};
+nickname:<span class="string">"草依山"</span>；
+</code></pre><h3 id="特殊字符">特殊字符</h3>
+<p>例如#号：位于首行字一个字符还要输出，可以在前面加\<br>#我输出了反斜杠，而且还是首行的首字符</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/12/markdown/" data-id="3cej2oqm7dx5bsuk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/12/markdown使用技巧/" data-id="6cs79dhwtmgyfz6n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/12/hello-world/" data-id="0g2fdjj5n0bnmwww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/12/hello-world/" data-id="e0achiui07nsld8l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +346,7 @@
       <ul>
         
           <li>
-            <a href="/2015/01/12/markdown/">markdown</a>
+            <a href="/2015/01/12/markdown使用技巧/">markdown</a>
           </li>
         
           <li>
