@@ -8,6 +8,12 @@
   <title>第三篇:hexo添加多说评论 | 小朱个人网站开张了</title>
   <meta name="author" content="Zhanyang Zhu">
   
+  <meta name="description" content="Hexo默认使用的第三方评论系统是Disqus，Disqus是外国的评论系统，在国内登录受限制，在此我们修改为国内用的多又好用的“多说”评论系统。
+步骤如下：
+
+在多说进行注册，获得通用代码。
+将通用代码（不要按多说的指导做，这样添加出来的评论是有问题的，没有判断，主页上每个文章下都有评论，而且一个">
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -226,7 +232,43 @@
     </header>
     <div class="entry">
       
-        
+        <p>Hexo默认使用的第三方评论系统是Disqus，Disqus是外国的评论系统，在国内登录受限制，在此我们修改为国内用的多又好用的“多说”评论系统。</p>
+<p>步骤如下：</p>
+<ol>
+<li>在<a href="www.duoshuo.com">多说</a>进行注册，获得通用代码。</li>
+<li>将通用代码（不要按多说的指导做，这样添加出来的评论是有问题的，没有判断，主页上每个文章下都有评论，而且一个评论了所有的都评论）,拿到通用代码后取出里面的shortname,按下文的方式，粘贴到 themes\你的主题\layout_partial\comment.ejs 里面</li>
+</ol>
+<p>这样，主页上代码没有评论，文章点进去后，有评论，评论之间互不影响。</p>
+<p>如下：</p>
+<figure class="highlight javaScript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;% <span class="keyword">if</span> (config.duoshuo_enable && page.comments){ %&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="title">section</span> <span class="attribute">id</span>=<span class="value">"comment"</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span><span class="vbscript">&lt;%= __(<span class="comment">'comment') %&gt;</span></span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 多说评论框 start --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ds-thread"</span> <span class="attribute">data-thread-key</span>=<span class="value">"&lt;%= page.path %&gt;"</span> <span class="attribute">data-title</span>=<span class="value">"&lt;%= page.title %&gt;"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;%= page.permalink %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 多说评论框 end --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> duoshuoQuery = {short_name:<span class="string">"替换成你获取的通用代码中的short_name"</span>};</div><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line"><span class="keyword">var</span> ds = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">ds.type = <span class="string">'text/javascript'</span>;ds.async = <span class="literal">true</span>;</div><div class="line">ds.src = (<span class="built_in">document</span>.location.protocol == <span class="string">'https:'</span> ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">'//static.duoshuo.com/embed.js'</span>;</div><div class="line">ds.charset = <span class="string">'UTF-8'</span>;</div><div class="line">(<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]</div><div class="line">|| <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(ds);</div><div class="line">})();</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 多说公共JS代码 end --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">section</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% } %&gt;</span></div></pre></td></tr></table></figure>
+
+<p>上面代码第一行用到了config.duoshuo_enable , 需要在Hexo目录下_config.yml 文件中追加属性</p>
+<pre>
+# 是否启用多说评论
+duoshuo_enable: true
+</pre>
+
+<p>多说评论框中 data-thread-key data-title data-url 属性中用到了page这个对象，下面是page的一些属性：</p>
+<pre>
+{
+“title”: “文章标题”,
+“date”: “文章的发布日期（Moment.js 库）“,
+“updated”: “文章的更新日期（Moment.js 库）“,
+“comments”: “ 开启此文章的留言功能 boolean 值”,
+“layout”: “ 文章布局”,
+“content”: “文章内文”,
+“excerpt”: “ 文章摘要（内文中 之前的内容）”,
+“source”: “about/index.html 文件的相对路径”,
+“path”: “about/index.html 文章的相对路径”,
+“ctime”: “2013-04-05T14:38:36.000Z”,
+“mtime”: “2013-04-05T14:38:41.000Z”,
+“permalink”: “ 完整的网络访问路径”,
+“full_path”: “D:\hexo11/source/about/index.html 原始文件路径”,
+“categories” : “{}“,
+“tags”: “{}”
+“_id”: 1
+}
+</pre>
       
     </div>
     <footer>
